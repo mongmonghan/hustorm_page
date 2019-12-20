@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:700,900&display=swap" rel="stylesheet">
+	<style type="text/css">
+		html{font-family: 'Noto Sans KR', sans-serif;}
+		body,h1,p{margin:0; padding:0;}
+		.wrap{ width: 100%; margin:auto; height:700px; position: relative;margin-top: 0px; padding-top: 0;}
+		header .wrap, {width:100%; margin-top: 0;}
+
+		#t5{margin-top: 0; padding-top: 0;}
+
+		#a h1{
+			font-size: 70px; font-weight: 710;
+			position: absolute; 
+			top:400px; 
+			line-height: 1.3;
+			}
+
+		a{
+			font-size: 60px;
+			color:black; 
+			position: absolute; 
+ 			top: 250px;
+			left:calc(50% - 10px);}
+
+
+
+		h2{ font-size: 64px; 
+			font-weight: 800;
+			line-height: 1.3;
+			letter-spacing: -1px;
+			position: absolute;}
+		
+		p{ font-size: 26px; 
+			font-weight: 700;
+			line-height: 1.4;
+			color:#888;
+			letter-spacing: -1px;
+			word-spacing: -2px;
+			width:800px;
+			position: absolute;
+			word-break: keep-all;}
+
+		img{ position: absolute; }
+		.bold{color:black;}
+
+	section .wrap{position: relative;opacity: 0;}
+	#a{height: 1200px;}
+	#b{height: 800px;}
+	#c{height: 800px; margin-top: 30px;}
+	#d{height: 850px; margin-bottom: 30px;}
+	#e{height: 800px;}
+	#f{height: 700px;}
+	#g{height: 1000px;}
+
+		@keyframes f{
+			from{opacity: 0;}
+			to{opacity: 1;}
+		}
+		@keyframes ltor{
+			from{left:0px;opacity: 0;}
+			to{left:100px;opacity: 1;}
+		}
+		@keyframes rtol{
+			from{left:800px;opacity: 0;}
+			to{left:700px;opacity: 1;}
+		}
+		@keyframes at{
+			from{top:300px; opacity: 0;}
+			to{top:100px; opacity: 1;}
+		}
+		@keyframes bt{
+			from{top:350px; opacity: 0;}
+			to{top:150px; opacity: 1;}
+		}
+		@keyframes at2{
+			from{top:300px; opacity: 0;}
+			to{top:0px; opacity: 1;}
+		}
+
+
+		#monitor{position: fixed;display: none;
+		padding: 5px; height: 20px; color: white; width: 70px; top: 0; right: 0;}
+
+		#b{background: url(korea.jpg);background-size: cover;background-attachment: fixed;background-repeat: no-repeat;}
+		#e{background: url(back2.jpg);background-size: cover;background-attachment: fixed;background-position: bottom;}
+
+		.pan{background: white; height:800px;
+				opacity: 0.4; width:100%; margin-top:0; padding: 0;}
+		#img1{left:810px;top:0px;width: 400px;}
+		#img2{left: 970px;top:-70px;width: 270px;}
+		#img3{left: 150px;top:50px;width: 450px;}
+		#img4{right: 100px;top:-50px;width: 700px;}
+		#img5{left: 250px;top:300px;width: 400px}
+		#img52{left: 400px;top:400px;width: 500px}
+		#img6{left: 750px;top:-15px;width: 550px;}
+		#img7{left:810px;top:155px;width: 230px;}
+
+		.ah1{left: 220px;top: 100px;}
+		.bh2{left: 200px;top:100px;color: white}
+		.bp{left: 205px;top: 360px}
+		.ch2{left: 780px;top: 0px;}
+		.cp{left: 750px;top: 370px}
+		.dh2{left: 200px;top: 0px}
+		.dp{left: 500px;top: 220px}
+		.eh2{left: 650px;top: 100px}
+		.ep{left: 655px;top: 280px;width:600px;}
+		.fh2{left: 200px;top: 150px}
+		.fp{left: 200px;top: 400px}
+		.gh2{left: 500px;top: 155px}
+		.gp{left: 500px;top: 305px;font-size: 1em;line-height: 2;}
+		.bold{color:black;}
+
+
+		div #inner1 {position:absolute;width: 800px;left: 780px;top: 350px}
+		div #inner2 {position:absolute;width: 800px;left: 200px;top: 350px}
+		button.accordion{font-size: 1.2em;font-weight:600; 
+		  cursor:pointer;
+		  border:none;
+		  outline:none;
+		  text-align:left;
+		  background-color:transparent;
+		  color:black;
+		  padding:7px;
+		  margin:4px 0;
+		  border-radius:4px;
+		  transition:0.3s;
+		}
+
+		button.accordion:hover{
+		  background-color:rgba(0,0,0,0.3);
+		}
+
+		button.accordion.active{
+		  background-color:gray;
+		  color:white;
+		  width: 420px;
+		  border-radius:8px 8px 0px 0px;
+		  margin:0px;
+		  padding: 10px
+		 }
+
+		div.panel{width: 400px;
+		  background-color:rgba(0,0,0,0.8);
+		  color:white;
+		  border-radius:0px 0px 8px 8px;
+		  overflow:hidden;
+		  opacity:0;
+		  max-height:0;
+		  transition:0.3s;
+		}
+
+		div.panel.show{width: 400px;
+		  opacity:1;
+		  max-height:500px;
+		  padding: 10px;
+		  margin-bottom:20px;
+		}
+
+		a {
+  text-decoration: none;
+  display: inline-block;
+  padding: 0px 30px;
+}
+
+a:hover {
+  background-color: #ddd;
+  color: black;
+}
+.btn {
+  background-color: black;
+  border: none;
+  color: white;
+  padding: 18px 21px;
+  font-size: 21px;
+  cursor: pointer;
+}
+.btn:hover {
+  background-color: gray;
+}
+
+		.fop{font-size: 1.5em;position: absolute;left: 38%;top:40%;color: #ddd;line-height: 1.6;width: 300px}
+ 		.fop2{font-size: 1.5em;position: absolute;left: 64.5%;top:40%;color: #ddd;line-height: 1.6;width: 300px}
+		footer {background:black;position: relative; height:300px;}
+		.fnav{height: 100%}
+		.fnav a {font-size: 3em;color: white;position: absolute;font-weight: 900;
+				line-height: 1.3;letter-spacing: -1px;text-decoration: none;
+				left: 9.5%;top:40%;}
+		.fnav a:hover {transition: all 1.5s;color:darkred;}
+	</style>
+
+</head>
+
+<body>
+<script>
+function goBack() {
+  window.history.back();
+}
+</script>
+<button class="btn" onclick="goBack()"><<br></button>
+
+	<section id="a" style="opacity: 0;animation: f 3s forwards">
+	<img src="1.png"  id="img1">
+	<h1 class="ah1">HUSTORM<br>듀얼라이팅<br> 무선 물걸레 청소기</h1>
+	</div>
+	</section>
+
+	<section id="b">
+	<div id="t2" class="wrap">
+	
+	<h2 class="bh2">이제 한국의 고유한 디자인과 문화가<br>전세계로 향합니다.</h2>
+	<p class="bp"><span style="background-color:#fff">고려청자의 부드럽고 유려한 곡선을 디자인 모티브로 했으며<br>한국의 주거 형태인 방바닥 문화로부터 시작되고 개발되었습니다.</span>
+	</p>
+	</div>
+	</section>
+
+	<section id="c">
+	<div id="t3" class="wrap">
+	<img src="3.png" id="img3">
+	<h2 class="ch2">청소가<br> 더 쉽고, 더 편하고,<br>더 자유로워집니다.</h2>
+	<p class="cp">
+	<div id="inner1">
+	<button class="accordion">
+	  250rpm 무선 듀얼스핀 >
+	</button>
+	<div class="panel">
+	  청소할 때 걸리적 거리는 전원 케이블로부터 자유롭습니다
+	</div>
+
+	<button class="accordion">
+	  자유로운 각도 조절 >
+	</button>
+	<div class="panel">
+	직진성을 향상시키는 볼베어링 구조를 사용해 적은 힘으로 효과적인 청소를 할 수 있습니다.
+	</div>
+
+	<button class="accordion">
+	  낮은 높이의 헤드 >
+	</button>
+	<div class="panel">
+	낮은 가구 밑이나 청소기가 들어가기 힘든 높이도 청소가 수월합니다.
+	</div>
+	</div>
+	</p>
+	</div>
+	</section>
+
+	<section id="d">
+	<div id="t4" class="wrap">
+	<img src="4.png" id="img4">
+	<h2 class="dh2">청소가<br> 더 쉽고, 더 편하고,<br>더 자유로워집니다.</h2>
+	<p class="dp">	
+	<div id="inner2">
+	<button class="accordion">
+	  이지 조인트 >
+	</button>
+	<div class="panel">
+	  원터치 조립으로 간편하게 바로 사용이 가능합니다.
+	</div>
+
+	<button class="accordion">
+	 셀프스탠딩 >
+	</button>
+	<div class="panel">
+	허리 굽힐 필요없이 간편하게 세워놓을 수 있습니다.
+	</div>
+
+	<button class="accordion">
+	  8단 자동 조절 파이프 >
+	</button>
+	<div class="panel">
+	키가 작거나 큰 사람 누구나 편리하게 청소할 수 있습니다.
+	</div>
+	</div>
+	</p>
+	</div>
+	</section>
+
+	<section id="e"><div class="pan" style="position: absolute;"></div>
+	<div id="t5" class="wrap">
+	<img src="5.png" id="img5">
+	<img src="5-2.png" id="img52">
+	<h2 class="eh2">극세사 패드</h2>
+	<p class="ep">
+	밀림방지 기능이 있어 사용이 간편하며<br>다양한 재질의 바닥에서도 뛰어난 청소성능을 발휘합니다.
+	</p>
+	</div>
+	</section>
+
+	<section id="f">
+		<div id="t6" class="wrap">
+		<img src="6.png" id="img6">
+		<h2 class="fh2">이외에도<br>좋은 점은 많습니다.</h2>
+		<p class="fp">
+		<span class="bold">삼성 정품 리튬이온 배터리<br></span>
+		내구성과 성능이 검증된 안전한 배터리를 사용합니다.
+		<br>
+		<span class="bold">충격, 파손방지 댐퍼<br></span>
+		청소시 발생할 수 있는 가구 손상과 제품 손상을 방지합니다.
+		</p>
+		</div>
+
+	</section>
+
+		<section id="g">
+		<div id="t7" class="wrap">
+		<img src="1.png"  id="img7">
+		<h2 class="gh2">제품사양</h2>
+		<hr style="margin-top: 200px">
+		<p class="gp">
+		<span class="bold">제품 중량 </span> 
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;약3.6kg
+		<br>
+		<span class="bold">본체 크기 </span> 
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;410*205*1020mm
+		<br>
+		<span class="bold">본체 재질 </span> 
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ABS외
+		<br>
+		<span class="bold">패드 크기 </span> 
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;직경 약 220mm
+		<br>
+		<span class="bold">패드 재질 </span> 
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;극세사
+		<br>
+		<span class="bold">패드 회전수 </span> 
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;250RPM
+		<br>
+		<span class="bold">충전시간 / 사용시간 </span> 
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;약 4시간/ 약 30분
+		<br>
+		<span class="bold">보증기간 </span> 
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1년, 부품보유기간 7년
+		<br>
+		<span class="bold">원산지 </span> 
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;대한민국
+		<br>
+		</p>
+		</div>
+
+	</section>
+</body>
+	<div id="monitor"></div>
+	<script type="text/javascript">
+		window.onscroll = function () {
+		var t = document.documentElement.scrollTop + document.body.scrollTop;
+		monitor.innerHTML = t.toFixed(1);
+
+
+		var accordions = document.querySelectorAll("button.accordion");
+
+		for (var i = 0; i < accordions.length; i++) {
+		  accordions[i].onclick = function() {
+		    this.classList.toggle("active");
+		    this.nextElementSibling.classList.toggle("show");
+		  };
+		}
+		
+		if (750<t) {t2.style.animation = "bt 2s forwards";}
+		else{t2.style.animation = "";}
+
+
+		if (t>1700) {t3.style.animation = "at 2s forwards";}
+		else{t3.style.animation = "";}
+		if (t>1700) {img3.style.animation = "f 2s forwards";}
+		else{img3.style.animation = "";}
+
+		if (t>2500) {t4.style.animation = "bt 2s forwards";}
+		else{t4.style.animation = "";}
+		if (t>2500) {img4.style.animation = "f 2s forwards";}
+		else{img4.style.animation = "";}
+
+		if (t>3430) {t5.style.animation = "at2 2s forwards";}
+		else{t5.style.animation = "";}
+		if (t>3430) {img5.style.animation = "ltor 2s forwards";}
+		else{img5.style.animation = "";}
+
+		if (4180<t) {t6.style.animation="bt 2s forwards";}
+		else{t6.style.animation = "";}
+		if (t>4180) {img6.style.animation = "f 2s forwards";}
+		else{img6.style.animation = "";}
+		
+		if (5070<t) {t7.style.animation="bt 2s forwards";}
+		else{t7.style.animation = "";}
+		if (t>5070) {img7.style.animation = "f 2s forwards";}
+		else{img7.style.animation = "";}
+	}
+</script>
+	<script src="http://code.jquery.com/jquery-latest.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function () {
+    fontAuto();
+
+    function fontAuto() {
+        $("footer").css({
+                   "fontSize" : Math.max(Math.min($("footer").width() / (5 * 30
+                   	)))
+                     });}
+
+ $(window).resize(function () {
+       fontAuto();
+  });});
+	</script>
+
+
+<footer class="footer">
+	
+	<div class="fnav">
+	  <a href="header">HUSTORM </a>
+	<p class="fop"> 회사명 : (주)휴스톰<br>대표 : 정영수, 최장원<br>개인정보관리책임자 : 최장원</p>
+	<p class="fop2">
+	주소 : 경기도 김포시 양촌읍 황금로258번길37<br>
+	전화 : 031-984-9701 / 사업자 등록번호 : 140-81-74610<br>
+	통신판매업 신고번호 : 제 2018-경기김포-0753 호
+	</p>
+</div>
+</footer>
+
+</body> 
+</html>
